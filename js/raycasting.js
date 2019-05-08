@@ -1,12 +1,3 @@
-
-var loop = (function(){
-    return requestAnimationFrame ||
-        webkitRequestAnimationFrame ||
-        mozRequestAnimationFrame ||
-        oRequestAnimationFrame ||
-        msRequestAnimationFrame
-})();
-
 class Raycasting{
     constructor(name){
         this.canvas = document.getElementById(name);
