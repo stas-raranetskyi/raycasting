@@ -1,4 +1,5 @@
-class Ray {
+import { line, createVector, fromAngle} from './main';
+export default class Ray {
     constructor(pos, angle) {
         this.pos = pos;
         this.dir = fromAngle(angle);

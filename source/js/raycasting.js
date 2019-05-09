@@ -1,3 +1,7 @@
+import Particle from './particle';
+import Boundary from './boundary';
+import { loop, createVector, getMousePos, random } from './main';
+
 class Raycasting{
     constructor(name){
         this.canvas = document.getElementById(name);
@@ -29,8 +33,8 @@ class Raycasting{
         };
     }
 
-    step = () => {
-        loop(this.step);
+    step(){
+        loop(this.step.bind(this));
 		this.draw();
     };
 
@@ -51,5 +55,4 @@ class Raycasting{
     }
 }
 
-var raycasting = new Raycasting('raycasting');
-raycasting.run();
+new Raycasting('raycasting').run();

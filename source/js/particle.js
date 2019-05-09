@@ -1,4 +1,7 @@
-class Particle {
+import { line, circle, createVector, radians, dist} from './main';
+import Ray from './ray';
+
+export default class Particle {
     constructor(x, y) {
         this.pos = createVector(x, y);
         this.rays = [];

@@ -1,4 +1,4 @@
-var loop = (function(){
+export const loop = (function(){
     return requestAnimationFrame ||
         webkitRequestAnimationFrame ||
         mozRequestAnimationFrame ||
@@ -6,7 +6,7 @@ var loop = (function(){
         msRequestAnimationFrame
 })();
 
-class Vector{
+export class Vector{
     constructor(x = 0, y = 0){
         this.x = x;
         this.y = y;
@@ -22,11 +22,11 @@ class Vector{
     }
 }
 
-const createVector = (x, y) => {
+export const createVector = (x, y) => {
     return new Vector(x, y);
 }
 
-function getMousePos(canvas, e) {
+export function getMousePos(canvas, e) {
     try{
         const rect = canvas.getBoundingClientRect();
         const x = e.clientX - rect.left;
@@ -38,11 +38,11 @@ function getMousePos(canvas, e) {
     }
 }
 
-const random = (min, max = min)  => {
+export const random = (min, max = min)  => {
     return Math.floor(Math.random() * (max - min)) + min;
 };
 
-const line = (ctx, x1, y1, x2, y2, width = 1, color = '#ffffff') => {
+export const line = (ctx, x1, y1, x2, y2, width = 1, color = '#ffffff') => {
     ctx.beginPath();
     ctx.strokeStyle = color;
     ctx.lineWidth = width;
@@ -51,25 +51,25 @@ const line = (ctx, x1, y1, x2, y2, width = 1, color = '#ffffff') => {
     ctx.stroke();
 }
 
-const circle = (ctx, x, y, r, color = '#ffffff') => {
+export const circle = (ctx, x, y, r, color = '#ffffff') => {
     ctx.beginPath();
     ctx.fillStyle = color;
     ctx.arc(x, y, r, 0, 2 * Math.PI);
     ctx.fill();
 }
 
-function radians(degrees){
+export function radians(degrees){
     return degrees * Math.PI / 180;
 }
 
-const fromAngle = (angle, length = 1) => {
+export const fromAngle = (angle, length = 1) => {
     if (typeof length === 'undefined') {
       length = 1;
     }
     return createVector(length * Math.cos(angle), length * Math.sin(angle));
 };
 
-const dist = (v1, v2) => {
+export const dist = (v1, v2) => {
     try{
         var a = v1.x - v2.x;
         var b = v1.y - v2.y;
